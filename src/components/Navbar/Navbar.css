@@ -11,7 +11,7 @@
   display: flex;
   list-style: none;
   gap: 20px;
-  color: #49557e;
+  color: black;
   font-size: 18px;
 }
 
@@ -23,8 +23,8 @@
 .navbar button {
   background: transparent;
   font-size: 16px;
-  color: #49557e;
-  border: 1px solid tomato;
+  color: black;
+  border: 2px solid tomato;
   padding: 10px 30px;
   cursor: pointer;
   border-radius: 50px;
@@ -35,7 +35,7 @@
 }
 .navbar .active {
   padding-bottom: 2px;
-  border-bottom: 2px solid #49557e;
+  border-bottom: 2px solid tomato;
 }
 .navbar li {
   cursor: pointer;

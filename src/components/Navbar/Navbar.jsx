@@ -19,22 +19,23 @@ const Navbar = ({ setShowLogin }) => {
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
-          home
+          Home
         </Link>
+        <a
+          href="#about-us"
+          onClick={() => setMenu("about-us")}
+          className={menu === "about-us" ? "active" : ""}
+        >
+          About us
+        </a>
         <a
           href="#explore-menu"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
-          menu
+          Explore Menu
         </a>
-        <a
-          href=""
-          onClick={() => setMenu("mobile-app")}
-          className={menu === "mobile-app" ? "active" : ""}
-        >
-          mobile-app
-        </a>
+
         <a
           href="#footer"
           onClick={() => setMenu("contact-us")}

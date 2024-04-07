@@ -43,6 +43,10 @@ import food_29 from "./food_29.png";
 import food_30 from "./food_30.png";
 import food_31 from "./food_31.png";
 import food_32 from "./food_32.png";
+import food_33 from "./food_33.jpg";
+import food_34 from "./food_34.jpg";
+import food_35 from "./food_35.jpg";
+import food_36 from "./food_36.jpg";
 
 import add_icon_white from "./add_icon_white.png";
 import add_icon_green from "./add_icon_green.png";
@@ -59,17 +63,27 @@ import profile_icon from "./profile_icon.png";
 import bag_icon from "./bag_icon.png";
 import logout_icon from "./logout_icon.png";
 import parcel_icon from "./parcel_icon.png";
+import heroImg from "./heroimg.png";
+import delivery1 from "./delivery1.png";
+import delivery2 from "./delivery2.png";
+import delivery3 from "./delivery3.png";
+import aboutimg from "./about.png";
 
 export const assets = {
   logo,
+  aboutimg,
   basket_icon,
   header_img,
+  delivery1,
+  delivery2,
+  delivery3,
   search_icon,
   rating_starts,
   add_icon_green,
   add_icon_white,
   remove_icon_red,
   app_store,
+  heroImg,
   play_store,
   linkedin_icon,
   facebook_icon,
@@ -92,7 +106,7 @@ export const menu_list = [
     menu_image: menu_2,
   },
   {
-    menu_name: "Deserts",
+    menu_name: "Desserts",
     menu_image: menu_3,
   },
   {
@@ -197,7 +211,7 @@ export const food_list = [
     price: 14,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Deserts",
+    category: "Desserts",
   },
   {
     _id: "10",
@@ -206,7 +220,7 @@ export const food_list = [
     price: 22,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Deserts",
+    category: "Desserts",
   },
   {
     _id: "11",
@@ -215,7 +229,7 @@ export const food_list = [
     price: 10,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Deserts",
+    category: "Desserts",
   },
   {
     _id: "12",
@@ -224,7 +238,7 @@ export const food_list = [
     price: 12,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Deserts",
+    category: "Desserts",
   },
   {
     _id: "13",
@@ -405,5 +419,41 @@ export const food_list = [
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
+  },
+  {
+    _id: "33",
+    name: "American salad",
+    image: food_33,
+    price: 18,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Salad",
+  },
+  {
+    _id: "34",
+    name: "Panner Salad",
+    image: food_34,
+    price: 25,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Salad",
+  },
+  {
+    _id: "35",
+    name: "Greman salad",
+    image: food_35,
+    price: 35,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Salad",
+  },
+  {
+    _id: "36",
+    name: "Vegetarian Salad",
+    image: food_36,
+    price: 28,
+    description:
+      "Food provides essential nutrients for overall health and well-being",
+    category: "Salad",
   },
 ];
