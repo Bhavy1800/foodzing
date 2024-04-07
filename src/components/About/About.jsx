@@ -3,7 +3,7 @@ import "./About.css";
 import { assets } from "../../assets/assets";
 const About = () => {
   return (
-    <div className="about-us">
+    <div className="about-us" id="about-us">
       <div className="about-left">
         <img src={assets.aboutimg} alt="" />
       </div>
