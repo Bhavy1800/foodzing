@@ -64,8 +64,15 @@
   }
   .header-contents p {
     display: none;
+    font-size: 2rem;
   }
   .header-contents button {
     padding: 2vw 4vw;
+  }
+  .header-img img {
+    top: 40%;
+    left: 50%;
+    height: 40%;
+    transform: translate(-50%, -50%);
   }
 }

@@ -26,7 +26,7 @@ const Navbar = ({ setShowLogin }) => {
           onClick={() => setMenu("about-us")}
           className={menu === "about-us" ? "active" : ""}
         >
-          About us
+          About Us
         </a>
         <a
           href="#explore-menu"
@@ -37,15 +37,14 @@ const Navbar = ({ setShowLogin }) => {
         </a>
 
         <a
-          href="#footer"
+          href="#contactus"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
-          contact us
+          Contact Us
         </a>
       </ul>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
           <Link to={"/cart"}>
             <img src={assets.basket_icon} alt="" />
