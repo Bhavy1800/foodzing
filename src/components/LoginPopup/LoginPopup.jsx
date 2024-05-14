@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
-import { Link } from "react-router-dom";
-import { app } from "../Firebase/firebaseConfig";
 import { auth } from "../Firebase/firebaseConfig";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 const LoginPopup = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Sign Up");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       if (currState === "Sign Up") {
-        await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password).then(
+          (res) => {
+            const user = res.user;
+            updateProfile(user, { displayName: name });
+          }
+        );
+
         alert("Account Created");
       } else {
         await signInWithEmailAndPassword(auth, email, password);
@@ -43,7 +48,14 @@ const LoginPopup = ({ setShowLogin }) => {
           {currState === "Login" ? (
             <>{/* No name input for Login */}</>
           ) : (
-            <input type="text" placeholder="Your Name" name="" id="" required />
+            <input
+              type="text"
+              placeholder="Your Name"
+              onChange={(e) => setName(e.target.value)}
+              name=""
+              id=""
+              required
+            />
           )}
 
           <input

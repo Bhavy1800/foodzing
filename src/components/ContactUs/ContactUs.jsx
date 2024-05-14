@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import "./ContactUs.css";
+
 const ContactUs = () => {
-  const [userData, setUserData] = useState({
+  const initialUserData = {
     Name: "",
     Email: "",
     Subject: "",
     Message: "",
-  });
-  let name, value;
+  };
+
+  const [userData, setUserData] = useState(initialUserData);
+  const [buttonClicked, setButtonClicked] = useState(false);
+
   const data = (e) => {
-    name = e.target.name;
-    value = e.target.value;
+    const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
+
   const send = async (e) => {
-    const { Name, Email, Subject, Message } = userData;
     e.preventDefault();
+    const { Name, Email, Subject, Message } = userData;
     const option = {
       method: "POST",
       headers: {
@@ -27,13 +31,21 @@ const ContactUs = () => {
       "https://foodzing-fb25d-default-rtdb.firebaseio.com/Messages.json",
       option
     );
+    if (res.ok) {
+      setButtonClicked(true);
+      setUserData(initialUserData); // Reset fields after message is sent
+      setTimeout(() => {
+        setButtonClicked(false);
+      }, 3000); // Reset button after 3 seconds
+    }
   };
+
   return (
     <div className="container">
       <hr />
       <div className="contact_box" id="contactus">
         <h1 className="contact_heading">Contact Us</h1>
-        <form action="" method="POST">
+        <form>
           <input
             type="text"
             name="Name"
@@ -62,13 +74,14 @@ const ContactUs = () => {
             name="Message"
             placeholder="Your Message"
             value={userData.Message}
-            id=""
+            onChange={data}
+            autoComplete="off"
             cols="30"
             rows="10"
-            autoComplete="off"
-            onChange={data}
           ></textarea>
-          <button onClick={send}>Send Message</button>
+          <button className={buttonClicked ? "sent" : ""} onClick={send}>
+            {buttonClicked ? "Message Sent!" : "Send Message"}
+          </button>
         </form>
       </div>
     </div>
