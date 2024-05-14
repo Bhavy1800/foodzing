@@ -5,6 +5,7 @@ import { useState } from "react";
 import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 import WhyFoodZing from "../../components/WhyFoodZing/WhyFoodZing";
 import About from "../../components/About/About";
+import ContactUs from "../../components/ContactUs/ContactUs";
 const Home = () => {
   const [category, setCategory] = useState("All");
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <About />
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} />
+      <ContactUs />
     </div>
   );
 };
