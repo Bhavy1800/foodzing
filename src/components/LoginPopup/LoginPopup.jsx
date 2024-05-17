@@ -46,7 +46,7 @@ const LoginPopup = ({ setShowLogin }) => {
         </div>
         <div className="login-popup-inputs">
           {currState === "Login" ? (
-            <>{/* No name input for Login */}</>
+            <>{}</>
           ) : (
             <input
               type="text"

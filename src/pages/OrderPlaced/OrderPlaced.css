@@ -30,3 +30,7 @@
         transform: translateY(0);
     }
 }
+
+span {
+    color: tomato;
+}

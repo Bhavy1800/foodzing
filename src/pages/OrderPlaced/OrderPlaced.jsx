@@ -1,31 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./OrderPlaced.css";
 
-class PlaceOrdered extends React.Component {
-  state = {
-    showAnimation: false,
-  };
+const PlaceOrdered = () => {
+  const [showAnimation, setShowAnimation] = useState(false);
 
-  componentDidMount() {
-    // Trigger animation after component mounts
-    setTimeout(() => {
-      this.setState({ showAnimation: true });
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAnimation(true);
     }, 100);
-  }
+    return () => clearTimeout(timer);
+  }, []);
 
-  render() {
-    const { placeName } = this.props;
-    const { showAnimation } = this.state;
-
-    return (
-      <div className={`place-ordered ${showAnimation ? "show" : ""}`}>
-        <div className="content">
-          <h2>Your Place Ordered</h2>
-          <p>You ordered from: {placeName}</p>
-        </div>
+  return (
+    <div className={`place-ordered ${showAnimation ? "show" : ""}`}>
+      <div className='content'>
+        <h2>Your Order Placed ✅</h2>
+        <p>
+          You ordered from: <span>FoodZing</span>
+        </p>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default PlaceOrdered;

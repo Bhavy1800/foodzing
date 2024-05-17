@@ -1,29 +1,42 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./PlaceOrder.css";
 import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
+
 const PlaceOrder = () => {
   const navigate = useNavigate();
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalCartAmount } = React.useContext(StoreContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    if (form.checkValidity()) {
+      navigate("/orderPlaced");
+    } else {
+      form.reportValidity();
+    }
+  };
+
   return (
-    <form className="place-order">
+    <form className="place-order" onSubmit={handleSubmit}>
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-feilds">
-          <input type="text" placeholder="First Name" />
+          <input type="text" placeholder="First Name" required />
           <input type="text" placeholder="Last Name" />
         </div>
-        <input type="email" placeholder="Email address" />
-        <input type="text" placeholder="Street" />
+        <input type="email" placeholder="Email address" required />
+        <input type="text" placeholder="Street" required />
         <div className="multi-feilds">
-          <input type="text" placeholder="City" />
-          <input type="text" placeholder="State" />
+          <input type="text" placeholder="City" required />
+          <input type="text" placeholder="State" required />
         </div>
         <div className="multi-feilds">
-          <input type="text" placeholder="Zip code" />
-          <input type="text" placeholder="Country" />
+          <input type="text" placeholder="Zip code" required />
+          <input type="text" placeholder="Country" required />
         </div>
-        <input type="text" placeholder="Phone" />
+        <input type="text" placeholder="Phone" required />
       </div>
       <div className="place-order-right">
         <div className="cart-total">
@@ -47,9 +60,7 @@ const PlaceOrder = () => {
             </div>
             <hr />
           </div>
-          <button onClick={() => navigate("/orderPlaced")}>
-            Click here to order
-          </button>
+          <button type="submit">Click here to order</button>
         </div>
       </div>
     </form>

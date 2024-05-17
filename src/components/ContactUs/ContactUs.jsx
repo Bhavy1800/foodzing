@@ -33,10 +33,11 @@ const ContactUs = () => {
     );
     if (res.ok) {
       setButtonClicked(true);
-      setUserData(initialUserData); // Reset fields after message is sent
+      setUserData(initialUserData);
+      sent;
       setTimeout(() => {
         setButtonClicked(false);
-      }, 3000); // Reset button after 3 seconds
+      }, 3000);
     }
   };
 
@@ -80,7 +81,7 @@ const ContactUs = () => {
             rows="10"
           ></textarea>
           <button className={buttonClicked ? "sent" : ""} onClick={send}>
-            {buttonClicked ? "Message Sent!" : "Send Message"}
+            {buttonClicked ? "Message Sent" : "Send Message"}
           </button>
         </form>
       </div>
